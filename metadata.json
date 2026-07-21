@@ -1,0 +1,6 @@
+{
+  "name": "እንጣበስ",
+  "description": "A secure dating application for Ethiopian men and women featuring real-time chats, voice messages, secure end-to-end encryption aesthetics, custom membership packages, Telebirr payment integration, and a dedicated psychologist matchmaker.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

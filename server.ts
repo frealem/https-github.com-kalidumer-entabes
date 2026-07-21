@@ -9,7 +9,7 @@ import { MongoClient } from "mongodb";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 // Allow large payloads for base64 audio and receipt screenshots
 app.use(express.json({ limit: "50mb" }));
@@ -61,7 +61,11 @@ function loadDb(): DatabaseSchema {
   } catch (err) {
     console.error("Error reading db file, using default:", err);
   }
-  return DEFAULT_DB;
+  return {
+    registration: null,
+    rooms: [],
+    messages: [],
+  };
 }
 
 function saveDb(db: DatabaseSchema) {
